@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_65808de2086f057158a5ee8030f12954 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_65808de2086f057158a5ee8030f12954" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_65808de2086f057158a5ee8030f12954 = L.map(
+                "map_65808de2086f057158a5ee8030f12954",
+                {
+                    center: [40.745, -73.985],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_943ca8b512bc59f39319b143a4e2e5f5 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_943ca8b512bc59f39319b143a4e2e5f5.addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+            var circle_fdd406774d2b363919938529e11a2157 = L.circle(
+                [40.758, -73.9855],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1, "stroke": true, "weight": 3}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_f64f3161a61782ef6bbe73bbd23f26bf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_345cf7d2b82864c9ba1d8707c7582037 = $(`<div id="html_345cf7d2b82864c9ba1d8707c7582037" style="width: 100.0%; height: 100.0%;">Times Square</div>`)[0];
+                popup_f64f3161a61782ef6bbe73bbd23f26bf.setContent(html_345cf7d2b82864c9ba1d8707c7582037);
+            
+        
+
+        circle_fdd406774d2b363919938529e11a2157.bindPopup(popup_f64f3161a61782ef6bbe73bbd23f26bf)
+        ;
+
+        
+    
+    
+            var circle_b73a5a23b0f688d14f03de6f7968758b = L.circle(
+                [40.7695, -73.8633],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 138.88673573089125, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_fe4c501b9d1d8e9315b38c078b4e84a3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9f9c55d0e85ecdab6b6163afcbeac111 = $(`<div id="html_9f9c55d0e85ecdab6b6163afcbeac111" style="width: 100.0%; height: 100.0%;">#1 (no landmark < 0.8 km)<br>534 pickups (6.8/hour)</div>`)[0];
+                popup_fe4c501b9d1d8e9315b38c078b4e84a3.setContent(html_9f9c55d0e85ecdab6b6163afcbeac111);
+            
+        
+
+        circle_b73a5a23b0f688d14f03de6f7968758b.bindPopup(popup_fe4c501b9d1d8e9315b38c078b4e84a3)
+        ;
+
+        
+    
+    
+            var marker_27296310267460be4de9351bbb061927 = L.marker(
+                [40.7695, -73.8633],
+                {
+}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+            var div_icon_57669fadc05ecf7e39da96b4e45d4778 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11pt;font-weight:bold;color:black;background:yellow;border-radius:50%;padding:0 4px\"\u003e1\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_27296310267460be4de9351bbb061927.setIcon(div_icon_57669fadc05ecf7e39da96b4e45d4778);
+            
+    
+            var circle_9cee2b281bbb890fef0be051c3b2e917 = L.circle(
+                [40.7497, -73.9917],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 154.42414620959673, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_c90175342aec522a7e5f2259fa94ea53 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_945daf6387bfb1cf82922a0bfeaf27a0 = $(`<div id="html_945daf6387bfb1cf82922a0bfeaf27a0" style="width: 100.0%; height: 100.0%;">#2 Penn Station / MSG<br>412 pickups (5.3/hour)</div>`)[0];
+                popup_c90175342aec522a7e5f2259fa94ea53.setContent(html_945daf6387bfb1cf82922a0bfeaf27a0);
+            
+        
+
+        circle_9cee2b281bbb890fef0be051c3b2e917.bindPopup(popup_c90175342aec522a7e5f2259fa94ea53)
+        ;
+
+        
+    
+    
+            var marker_1f157611a4fbd7fa8abd8c4343d3fad1 = L.marker(
+                [40.7497, -73.9917],
+                {
+}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+            var div_icon_b2bec8ff7c1c1f6ddbfdd59908117ee8 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11pt;font-weight:bold;color:black;background:yellow;border-radius:50%;padding:0 4px\"\u003e2\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_1f157611a4fbd7fa8abd8c4343d3fad1.setIcon(div_icon_b2bec8ff7c1c1f6ddbfdd59908117ee8);
+            
+    
+            var circle_79829f38a8a27e505a9c769fff25bb7a = L.circle(
+                [40.7508, -73.9943],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 147.87058684621655, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_fc8b4843dcf6b1beaf93fdd9719e4916 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4dfb2a31659cb97e0adc54a3268f0444 = $(`<div id="html_4dfb2a31659cb97e0adc54a3268f0444" style="width: 100.0%; height: 100.0%;">#3 Penn Station / MSG<br>305 pickups (3.9/hour)</div>`)[0];
+                popup_fc8b4843dcf6b1beaf93fdd9719e4916.setContent(html_4dfb2a31659cb97e0adc54a3268f0444);
+            
+        
+
+        circle_79829f38a8a27e505a9c769fff25bb7a.bindPopup(popup_fc8b4843dcf6b1beaf93fdd9719e4916)
+        ;
+
+        
+    
+    
+            var marker_024682d349b34e8183158834c2ec9f0f = L.marker(
+                [40.7508, -73.9943],
+                {
+}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+            var div_icon_35414c7f399eb2ead51fcd6dc346ffc5 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11pt;font-weight:bold;color:black;background:yellow;border-radius:50%;padding:0 4px\"\u003e3\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_024682d349b34e8183158834c2ec9f0f.setIcon(div_icon_35414c7f399eb2ead51fcd6dc346ffc5);
+            
+    
+            var circle_fc2fd74c50e66d995e5a6b0139eab392 = L.circle(
+                [40.7637, -73.9736],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 125.01883549801614, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_cfd1d181cb869f92504e2b5c51c68b12 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b861b4a17dce07fcc6ca1b045e1cc570 = $(`<div id="html_b861b4a17dce07fcc6ca1b045e1cc570" style="width: 100.0%; height: 100.0%;">#4 Fifth Ave / 57th St<br>263 pickups (3.4/hour)</div>`)[0];
+                popup_cfd1d181cb869f92504e2b5c51c68b12.setContent(html_b861b4a17dce07fcc6ca1b045e1cc570);
+            
+        
+
+        circle_fc2fd74c50e66d995e5a6b0139eab392.bindPopup(popup_cfd1d181cb869f92504e2b5c51c68b12)
+        ;
+
+        
+    
+    
+            var marker_4c7927c3ae557c3aea1307e5d5005933 = L.marker(
+                [40.7637, -73.9736],
+                {
+}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+            var div_icon_3499d9e0f49394cf7f78d59f36233e4d = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11pt;font-weight:bold;color:black;background:yellow;border-radius:50%;padding:0 4px\"\u003e4\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_4c7927c3ae557c3aea1307e5d5005933.setIcon(div_icon_3499d9e0f49394cf7f78d59f36233e4d);
+            
+    
+            var circle_9d639a2c14766092ac78707892b27ed6 = L.circle(
+                [40.7741, -73.873],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 91.11485002907338, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_e0ca094780e8d9de506a4baf667f3b95 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e6c79cca3673011d1b1efe28c0e55a0b = $(`<div id="html_e6c79cca3673011d1b1efe28c0e55a0b" style="width: 100.0%; height: 100.0%;">#5 LaGuardia Airport<br>249 pickups (3.2/hour)</div>`)[0];
+                popup_e0ca094780e8d9de506a4baf667f3b95.setContent(html_e6c79cca3673011d1b1efe28c0e55a0b);
+            
+        
+
+        circle_9d639a2c14766092ac78707892b27ed6.bindPopup(popup_e0ca094780e8d9de506a4baf667f3b95)
+        ;
+
+        
+    
+    
+            var marker_da01c56cffe60430b2ebf8e9684874ab = L.marker(
+                [40.7741, -73.873],
+                {
+}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+            var div_icon_e0fc45acd91a8d480045683a3fdb5d38 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11pt;font-weight:bold;color:black;background:yellow;border-radius:50%;padding:0 4px\"\u003e5\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_da01c56cffe60430b2ebf8e9684874ab.setIcon(div_icon_e0fc45acd91a8d480045683a3fdb5d38);
+            
+    
+            var circle_c2e5ae2d6b90ff2165f772eaeb155029 = L.circle(
+                [40.6447, -73.782],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 102.53831728670899, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_4cd9f5b785863ee496b991be1638d4ef = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f6965ad69f55e67277e547a569b2a5e3 = $(`<div id="html_f6965ad69f55e67277e547a569b2a5e3" style="width: 100.0%; height: 100.0%;">#6 JFK Airport<br>217 pickups (2.8/hour)</div>`)[0];
+                popup_4cd9f5b785863ee496b991be1638d4ef.setContent(html_f6965ad69f55e67277e547a569b2a5e3);
+            
+        
+
+        circle_c2e5ae2d6b90ff2165f772eaeb155029.bindPopup(popup_4cd9f5b785863ee496b991be1638d4ef)
+        ;
+
+        
+    
+    
+            var marker_76901c2024a4f2b70d4efb61a52415e7 = L.marker(
+                [40.6447, -73.782],
+                {
+}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+            var div_icon_bcdd309f704b8f0087a6dc28a36bbeb9 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11pt;font-weight:bold;color:black;background:yellow;border-radius:50%;padding:0 4px\"\u003e6\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_76901c2024a4f2b70d4efb61a52415e7.setIcon(div_icon_bcdd309f704b8f0087a6dc28a36bbeb9);
+            
+    
+            var circle_9fd94510f8717811ed193dc0afa08334 = L.circle(
+                [40.7737, -73.8709],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 87.49866950901027, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_955345dff5b0f769c06fed3344d4aafb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_322570bb81d5f19db2ae48059b0eb051 = $(`<div id="html_322570bb81d5f19db2ae48059b0eb051" style="width: 100.0%; height: 100.0%;">#7 LaGuardia Airport<br>203 pickups (2.6/hour)</div>`)[0];
+                popup_955345dff5b0f769c06fed3344d4aafb.setContent(html_322570bb81d5f19db2ae48059b0eb051);
+            
+        
+
+        circle_9fd94510f8717811ed193dc0afa08334.bindPopup(popup_955345dff5b0f769c06fed3344d4aafb)
+        ;
+
+        
+    
+    
+            var marker_9221cf33afe69b18100332e88cbf2387 = L.marker(
+                [40.7737, -73.8709],
+                {
+}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+            var div_icon_d388b616f400a76d0846da947666c08e = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11pt;font-weight:bold;color:black;background:yellow;border-radius:50%;padding:0 4px\"\u003e7\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_9221cf33afe69b18100332e88cbf2387.setIcon(div_icon_d388b616f400a76d0846da947666c08e);
+            
+    
+            var circle_8eea9ff67bb99b2539d5f7d7f80fd358 = L.circle(
+                [40.7683, -73.9821],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 91.1438597212841, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_82a1ddc0031c1e97a2b98eaca499e67a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2309e8fcba60270fc42795a6769faab9 = $(`<div id="html_2309e8fcba60270fc42795a6769faab9" style="width: 100.0%; height: 100.0%;">#8 Columbus Circle<br>179 pickups (2.3/hour)</div>`)[0];
+                popup_82a1ddc0031c1e97a2b98eaca499e67a.setContent(html_2309e8fcba60270fc42795a6769faab9);
+            
+        
+
+        circle_8eea9ff67bb99b2539d5f7d7f80fd358.bindPopup(popup_82a1ddc0031c1e97a2b98eaca499e67a)
+        ;
+
+        
+    
+    
+            var marker_a647fa68c7cf7645ad1ced82a357de32 = L.marker(
+                [40.7683, -73.9821],
+                {
+}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+            var div_icon_4c324e9701873443651a053ca561f358 = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11pt;font-weight:bold;color:black;background:yellow;border-radius:50%;padding:0 4px\"\u003e8\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_a647fa68c7cf7645ad1ced82a357de32.setIcon(div_icon_4c324e9701873443651a053ca561f358);
+            
+    
+            var circle_613e87a1c72e015ca2fab7a4738b99a5 = L.circle(
+                [40.7625, -73.968],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 102.22328493011656, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_423fe90720341ce52fc0018bce8303ed = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_459bc0842914afc2f017f68886c4c1e1 = $(`<div id="html_459bc0842914afc2f017f68886c4c1e1" style="width: 100.0%; height: 100.0%;">#9 Fifth Ave / 57th St<br>175 pickups (2.2/hour)</div>`)[0];
+                popup_423fe90720341ce52fc0018bce8303ed.setContent(html_459bc0842914afc2f017f68886c4c1e1);
+            
+        
+
+        circle_613e87a1c72e015ca2fab7a4738b99a5.bindPopup(popup_423fe90720341ce52fc0018bce8303ed)
+        ;
+
+        
+    
+    
+            var marker_03aca96aaa7388cbaabbba3990e4453a = L.marker(
+                [40.7625, -73.968],
+                {
+}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+            var div_icon_6550bf91c17d0d46530f48b515c875ed = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11pt;font-weight:bold;color:black;background:yellow;border-radius:50%;padding:0 4px\"\u003e9\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_03aca96aaa7388cbaabbba3990e4453a.setIcon(div_icon_6550bf91c17d0d46530f48b515c875ed);
+            
+    
+            var circle_46f94d0190319436b505af69ca9cca3d = L.circle(
+                [40.7563, -73.9904],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "crimson", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 91.55479412868299, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_d1e988ab350590eca790314d4f3075c9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c9b510e6d7e59b92fa5653b6eaac39cf = $(`<div id="html_c9b510e6d7e59b92fa5653b6eaac39cf" style="width: 100.0%; height: 100.0%;">#10 Port Authority<br>170 pickups (2.2/hour)</div>`)[0];
+                popup_d1e988ab350590eca790314d4f3075c9.setContent(html_c9b510e6d7e59b92fa5653b6eaac39cf);
+            
+        
+
+        circle_46f94d0190319436b505af69ca9cca3d.bindPopup(popup_d1e988ab350590eca790314d4f3075c9)
+        ;
+
+        
+    
+    
+            var marker_c92a2889ed2d6180e1b5563968ced21d = L.marker(
+                [40.7563, -73.9904],
+                {
+}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+            var div_icon_3910b5e06b87438e4934e84bc354526b = L.divIcon({
+  "html": "\u003cdiv style=\"font-size:11pt;font-weight:bold;color:black;background:yellow;border-radius:50%;padding:0 4px\"\u003e10\u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_c92a2889ed2d6180e1b5563968ced21d.setIcon(div_icon_3910b5e06b87438e4934e84bc354526b);
+            
+    
+            var circle_a69b60391d916e8099ca4f4910d04975 = L.circle(
+                [40.7401, -73.9949],
+                {"bubblingMouseEvents": true, "color": "royalblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "royalblue", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 96.3710209072626, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_40c6ce4ed2a005024a239092323728ab = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e0ca78d7f69c230d57b2b8066ea95ed6 = $(`<div id="html_e0ca78d7f69c230d57b2b8066ea95ed6" style="width: 100.0%; height: 100.0%;">#11 Flatiron / Madison Sq<br>163 pickups (2.1/hour)</div>`)[0];
+                popup_40c6ce4ed2a005024a239092323728ab.setContent(html_e0ca78d7f69c230d57b2b8066ea95ed6);
+            
+        
+
+        circle_a69b60391d916e8099ca4f4910d04975.bindPopup(popup_40c6ce4ed2a005024a239092323728ab)
+        ;
+
+        
+    
+    
+            var circle_f067fe4753159776bf169aaba2efcd46 = L.circle(
+                [40.7795, -73.9556],
+                {"bubblingMouseEvents": true, "color": "royalblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "royalblue", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 81.54090039386075, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_5ea6400e112da93b19537cae92b0562b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_80931c7b049538a8bc83a69345dac520 = $(`<div id="html_80931c7b049538a8bc83a69345dac520" style="width: 100.0%; height: 100.0%;">#12 UES Museum Mile (79th St)<br>124 pickups (1.6/hour)</div>`)[0];
+                popup_5ea6400e112da93b19537cae92b0562b.setContent(html_80931c7b049538a8bc83a69345dac520);
+            
+        
+
+        circle_f067fe4753159776bf169aaba2efcd46.bindPopup(popup_5ea6400e112da93b19537cae92b0562b)
+        ;
+
+        
+    
+    
+            var circle_0acb35ee925556a79fa17b19a20e5fc4 = L.circle(
+                [40.7368, -73.9888],
+                {"bubblingMouseEvents": true, "color": "royalblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "royalblue", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 75.47379913161956, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_1d1113b7c9643ad9e5906f45e5234a29 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b7c4db618e0c7589b61943946e47ee52 = $(`<div id="html_b7c4db618e0c7589b61943946e47ee52" style="width: 100.0%; height: 100.0%;">#13 Union Square<br>116 pickups (1.5/hour)</div>`)[0];
+                popup_1d1113b7c9643ad9e5906f45e5234a29.setContent(html_b7c4db618e0c7589b61943946e47ee52);
+            
+        
+
+        circle_0acb35ee925556a79fa17b19a20e5fc4.bindPopup(popup_1d1113b7c9643ad9e5906f45e5234a29)
+        ;
+
+        
+    
+    
+            var circle_c36f402e11fdb7327a5cc5d6506564aa = L.circle(
+                [40.7622, -73.966],
+                {"bubblingMouseEvents": true, "color": "royalblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "royalblue", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 72.68287232121577, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_b93565a7a8953c41a46cd97d53c9940c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1c439d26b236c18d6d669b842430ecc9 = $(`<div id="html_1c439d26b236c18d6d669b842430ecc9" style="width: 100.0%; height: 100.0%;">#14 Fifth Ave / 57th St<br>107 pickups (1.4/hour)</div>`)[0];
+                popup_b93565a7a8953c41a46cd97d53c9940c.setContent(html_1c439d26b236c18d6d669b842430ecc9);
+            
+        
+
+        circle_c36f402e11fdb7327a5cc5d6506564aa.bindPopup(popup_b93565a7a8953c41a46cd97d53c9940c)
+        ;
+
+        
+    
+    
+            var circle_4218a22862195d7aa635229886c480ee = L.circle(
+                [40.6454, -73.7768],
+                {"bubblingMouseEvents": true, "color": "royalblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "royalblue", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 75.12177903101625, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_12a5ce71525925a51ffd13871c8d2226 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b64c4f3bdd78a496f9b6a8b6cc379870 = $(`<div id="html_b64c4f3bdd78a496f9b6a8b6cc379870" style="width: 100.0%; height: 100.0%;">#15 JFK Airport<br>105 pickups (1.3/hour)</div>`)[0];
+                popup_12a5ce71525925a51ffd13871c8d2226.setContent(html_b64c4f3bdd78a496f9b6a8b6cc379870);
+            
+        
+
+        circle_4218a22862195d7aa635229886c480ee.bindPopup(popup_12a5ce71525925a51ffd13871c8d2226)
+        ;
+
+        
+    
+    
+            var circle_532cab0c85e9e042de255e15b6a60161 = L.circle(
+                [40.7786, -73.9818],
+                {"bubblingMouseEvents": true, "color": "royalblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "royalblue", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 64.41649355086, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_0faf6322d597f316f90f671c38eede44 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e53a87491992b54fd9f237ad34174071 = $(`<div id="html_e53a87491992b54fd9f237ad34174071" style="width: 100.0%; height: 100.0%;">#16 Lincoln Center<br>101 pickups (1.3/hour)</div>`)[0];
+                popup_0faf6322d597f316f90f671c38eede44.setContent(html_e53a87491992b54fd9f237ad34174071);
+            
+        
+
+        circle_532cab0c85e9e042de255e15b6a60161.bindPopup(popup_0faf6322d597f316f90f671c38eede44)
+        ;
+
+        
+    
+    
+            var circle_f257572ec51f23706e3bd45cf2469d07 = L.circle(
+                [40.7524, -73.9782],
+                {"bubblingMouseEvents": true, "color": "royalblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "royalblue", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 60.15586775391294, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_697295718486e8a6d6346c221b50e502 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d686f456fcd5580d1f3d76b55f29ac82 = $(`<div id="html_d686f456fcd5580d1f3d76b55f29ac82" style="width: 100.0%; height: 100.0%;">#17 Grand Central<br>93 pickups (1.2/hour)</div>`)[0];
+                popup_697295718486e8a6d6346c221b50e502.setContent(html_d686f456fcd5580d1f3d76b55f29ac82);
+            
+        
+
+        circle_f257572ec51f23706e3bd45cf2469d07.bindPopup(popup_697295718486e8a6d6346c221b50e502)
+        ;
+
+        
+    
+    
+            var circle_93c69febeb9c7d0bd32f076345c494bd = L.circle(
+                [40.7425, -73.9846],
+                {"bubblingMouseEvents": true, "color": "royalblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "royalblue", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 60, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_92815ce3165a583bf349fcb76491710b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_dff70c50c02cfc1fc155812fec70ecb2 = $(`<div id="html_dff70c50c02cfc1fc155812fec70ecb2" style="width: 100.0%; height: 100.0%;">#18 Gramercy / Kips Bay<br>82 pickups (1.1/hour)</div>`)[0];
+                popup_92815ce3165a583bf349fcb76491710b.setContent(html_dff70c50c02cfc1fc155812fec70ecb2);
+            
+        
+
+        circle_93c69febeb9c7d0bd32f076345c494bd.bindPopup(popup_92815ce3165a583bf349fcb76491710b)
+        ;
+
+        
+    
+    
+            var circle_82b14d49aa00d34eff9fd326335830b6 = L.circle(
+                [40.774, -73.8746],
+                {"bubblingMouseEvents": true, "color": "royalblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "royalblue", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 60.36226154821114, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_964ee88d3fe1f0004f62c98256c768c6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a48f0bf29d11c8975f226d7f7987ff07 = $(`<div id="html_a48f0bf29d11c8975f226d7f7987ff07" style="width: 100.0%; height: 100.0%;">#19 LaGuardia Airport<br>81 pickups (1.0/hour)</div>`)[0];
+                popup_964ee88d3fe1f0004f62c98256c768c6.setContent(html_a48f0bf29d11c8975f226d7f7987ff07);
+            
+        
+
+        circle_82b14d49aa00d34eff9fd326335830b6.bindPopup(popup_964ee88d3fe1f0004f62c98256c768c6)
+        ;
+
+        
+    
+    
+            var circle_0cd3b90b4950f7f82eb484e5c843774a = L.circle(
+                [40.751, -74.0055],
+                {"bubblingMouseEvents": true, "color": "royalblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "royalblue", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 60.3549631708713, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_1adf7c25d29e002b907533fcffb54522 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1ffc6594ce9116e33d703eccaaa096ee = $(`<div id="html_1ffc6594ce9116e33d703eccaaa096ee" style="width: 100.0%; height: 100.0%;">#20 (no landmark < 0.8 km)<br>79 pickups (1.0/hour)</div>`)[0];
+                popup_1adf7c25d29e002b907533fcffb54522.setContent(html_1ffc6594ce9116e33d703eccaaa096ee);
+            
+        
+
+        circle_0cd3b90b4950f7f82eb484e5c843774a.bindPopup(popup_1adf7c25d29e002b907533fcffb54522)
+        ;
+
+        
+    
+    
+            var circle_67a1e345565f3c64883dfe296b5a615b = L.circle(
+                [40.763, -73.9697],
+                {"bubblingMouseEvents": true, "color": "royalblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "royalblue", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 60, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_dd95cf36ae8670550f31d1be488e06ad = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0e49380da9765edee028935f2175a2b7 = $(`<div id="html_0e49380da9765edee028935f2175a2b7" style="width: 100.0%; height: 100.0%;">#21 Fifth Ave / 57th St<br>79 pickups (1.0/hour)</div>`)[0];
+                popup_dd95cf36ae8670550f31d1be488e06ad.setContent(html_0e49380da9765edee028935f2175a2b7);
+            
+        
+
+        circle_67a1e345565f3c64883dfe296b5a615b.bindPopup(popup_dd95cf36ae8670550f31d1be488e06ad)
+        ;
+
+        
+    
+    
+            var circle_ad96dd651a2a87fa1dc34978cef93632 = L.circle(
+                [40.761, -73.9692],
+                {"bubblingMouseEvents": true, "color": "royalblue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "royalblue", "fillOpacity": 0.35, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 60, "stroke": true, "weight": 1}
+            ).addTo(map_65808de2086f057158a5ee8030f12954);
+        
+    
+        var popup_34f3f37923bcd7e0c03a60a127e3eec6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e1b576c059bda41c3a3b1edce85ee84e = $(`<div id="html_e1b576c059bda41c3a3b1edce85ee84e" style="width: 100.0%; height: 100.0%;">#22 Fifth Ave / 57th St<br>78 pickups (1.0/hour)</div>`)[0];
+                popup_34f3f37923bcd7e0c03a60a127e3eec6.setContent(html_e1b576c059bda41c3a3b1edce85ee84e);
+            
+        
+
+        circle_ad96dd651a2a87fa1dc34978cef93632.bindPopup(popup_34f3f37923bcd7e0c03a60a127e3eec6)
+        ;
+
+        
+    
+</script>
+</html>
