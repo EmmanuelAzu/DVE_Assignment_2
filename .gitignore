@@ -1,0 +1,9 @@
+.ipynb_checkpoints/
+__pycache__/
+train.csv
+cache/
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.synctex.gz
