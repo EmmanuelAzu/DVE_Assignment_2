@@ -39,4 +39,5 @@ Geospatial and time-series analysis of the NYC TLC taxi trips (Kaggle *nyc-taxi-
 - **Memory:** the full dataset with the extra columns needs a few GB of RAM (8 GB recommended).
 - **Internet:** only the background tiles of the interactive folium maps (Section 4.2) need internet access; all other plots work offline.
 - **Reproducibility:** a fixed random seed (42) is used throughout; running the notebook rewrites the files in `figures/` and `maps/`.
+- **t-SNE is not exactly repeatable:** even with the seed fixed, t-SNE (multi-threaded) can give slightly different embeddings on another run or machine, so the number of t-SNE clusters and the agreement scores in Section 6.5–6.6 may differ a little from the saved results and the report (a clean re-run gave 24 instead of 19 t-SNE clusters, and a t-SNE–UMAP adjusted Rand index of 0.45/0.48 instead of 0.42/0.45). Everything else, including the UMAP results, matched exactly, and the conclusions do not depend on these exact values.
 - **Rebuilding the report:** `cd report && pdflatex main.tex` (run twice); it reads the plots from `../figures/`.
