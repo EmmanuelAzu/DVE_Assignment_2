@@ -12,6 +12,7 @@
 \usepackage{microtype}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{array}
 \usepackage{float}
 \graphicspath{{../figures/}}
 \setlength{\parskip}{3pt}
@@ -43,14 +44,14 @@ We analyse the 1\,458\,644 trips of the Kaggle \emph{NYC Taxi Trip Duration} tra
 \end{abstract}
 
 \section*{Overview and reproducibility}
-All code, with the question numbers marked, is in the accompanying Jupyter notebook \texttt{DVE\_Assignment\_2.ipynb}; every figure below is produced by it. We use a fixed seed (42) throughout. The Winter Storm of 23--25 January 2016 (only 1\,614 trips on Saturday 23 January against about 8\,400 on a normal Saturday) is excluded from ``typical-day'' baselines in Sections~3 and~4. Hand-entered landmark coordinates are used only to \emph{describe} patterns and are approximate.
+All code, with the question numbers marked, is in the accompanying Jupyter notebook \texttt{DVE\_Assignment\_2.ipynb}; every figure below is produced by it. We use a fixed seed (42) throughout. The Winter Storm of 23--25 January 2016 (only 1\,614 trips on Saturday 23 January against about 8\,600 on a normal Saturday) is excluded from ``typical-day'' baselines in Sections~3 and~4. Hand-entered landmark coordinates are used only to \emph{describe} patterns and are approximate.
 
 %====================================================================
 \section{Data cleaning}
 We computed the great-circle (haversine) distance between pickup and dropoff and the average speed (distance divided by duration); note that haversine is a lower bound on the road distance, so thresholds are generous. Figures~\ref{fig:q1a}--\ref{fig:q1b} show the raw data and Table~\ref{tab:funnel} the effect of each rule. The audit found no missing values, no duplicate ids and that \texttt{trip\_duration} equals dropoff $-$ pickup time for every row.
 
 \begin{itemize}\setlength\itemsep{1pt}
-\item \textbf{Passenger count} $\notin[1,6]$: zero passengers is not a paid trip and 7--9 exceed any taxi's capacity (driver-entered data-entry errors).
+\item \textbf{Passenger count} $\notin[1,6]$: zero passengers is not a paid trip and 7--9 exceed any taxi's capacity (driver-entered errors).
 \item \textbf{Location}: the raw coordinates reach longitude $-121.9$, latitude $51.9$ (west coast, Canada, Atlantic). We keep trips whose pickup \emph{and} dropoff lie in lon $[-74.30,-73.65]$, lat $[40.49,40.92]$, which covers all five boroughs plus JFK and Newark.
 \item \textbf{Duration} $<60$\,s (cancelled/accidental meter starts; 1\,984 trips are shorter than 10 s) and $>3$\,h (meter left running; up to 40.8 days).
 \item \textbf{Distance} $<100$\,m: below GPS accuracy in Manhattan's urban canyons; the trip did not go anywhere and the speed is undefined.
@@ -103,7 +104,7 @@ Total volume is similar (7\,923 trips on an average weekday, 8\,104 on a weekend
 \subsection{Holidays}
 The 2016 dates are: Martin Luther King Day Mon 18 Jan, Valentine's Day Sun 14 Feb, St Patrick's Day Thu 17 Mar, Easter Sunday 27 Mar and Memorial Day Mon 30 May. Each holiday is compared with all other days of the \emph{same weekday} (excluding other holidays and the storm), using the daily total, the hourly profile, speed and distance (Table~\ref{tab:hol}, Figures~\ref{fig:holt}--\ref{fig:holh}).
 \begin{table}[!htbp]\centering\small
-\caption{Holidays versus the same weekday (baseline mean $\pm$ sd across 23--25 baseline days).}\label{tab:hol}
+\caption{Holidays versus the same weekday (baseline = mean of the 23--25 other days with that weekday; ratio = holiday/baseline, $z$ = distance from the baseline in standard deviations; speed in km/h, distance in km).}\label{tab:hol}
 \begin{tabular}{lrrrrrrr}\toprule Holiday & Trips & Baseline & Ratio & $z$ & Peak h (base) & Speed (base) & Dist (base)\\\midrule
 MLK Day & 7\,037 & 7\,231 & 0.97 & $-0.6$ & 18 (18) & 16.8 (15.0) & 3.50 (3.55)\\
 Valentine's Day & 8\,342 & 7\,542 & 1.11 & $+1.4$ & 17 (0) & 15.8 (16.8) & 3.31 (3.77)\\
@@ -116,7 +117,7 @@ Memorial Day & 5\,491 & 7\,231 & 0.76 & $-5.4$ & 16 (18) & 19.1 (15.0) & 4.30 (3
 \textbf{Only Memorial Day changes the daily volume significantly:} 24\,\% fewer trips than a normal Monday ($z=-5.4$); the morning commute almost vanishes (07:00 at 24\,\% of normal), the peak moves from 18:00 to 16:00, after-midnight trips are 2.5$\times$ higher at 02:00 (Sunday night of a long weekend), and trips are faster and longer (19.1 vs 15.0 km/h; 4.3 vs 3.55 km) -- empty roads and, plausibly, people leaving the city. \textbf{MLK Day} has a normal total but a much weaker morning commute (45\,\% of normal at 07:00), higher speed and busier small hours (1.6$\times$ at 02:00). \textbf{Valentine's Day} is +10.6\,\% on a normal Sunday ($z=+1.4$, modest): the peak moves to 17:00 (dinner), the after-midnight spill-over is weaker (0.72$\times$ at 01:00) and trips are shorter and slower. \textbf{St Patrick's Day} (98\,\%) and \textbf{Easter} (96\,\%) are close to normal; the largest deviations are a midday dip on 17 March (0.81$\times$ at 12:00, plausibly the Fifth Avenue parade closing streets) and slightly higher late-evening demand. Holiday effects are therefore mostly a \emph{redistribution of demand across the hours} rather than a change in volume, with the long-weekend Monday the exception. With one occurrence per holiday these are single-event comparisons.
 
 \subsection{Speed through the day}
-Trips are \textbf{fastest at about 05:00} (24.6 km/h on average) and slowest in the middle of the working day (12.1 km/h at 15:00; 12.5 km/h on average between 08:00 and 18:00). Speed rises through the night from 17.8 km/h at midnight, falls sharply between 06:00 and 08:00 (24.6 to 13.0 km/h) as the rush begins, stays on a flat congested plateau from 08:00 to 18:00 and recovers in the evening (13.6 to 16.9 km/h from 19:00 to 23:00). The 05:00 maximum is partly a trip-mix effect (mean distance 5.5 km against 3.4 km at 15:00: airport and highway trips). Weekends are faster between 05:00 and 19:00. Speeds are haversine-based, so the pattern, not the absolute level, is reliable.
+Trips are \textbf{fastest at about 05:00} (24.6 km/h on average) and slowest in the middle of the working day (12.1 km/h at 15:00; 12.5 km/h on average between 08:00 and 18:00). Speed rises through the night from 17.8 km/h at midnight, falls sharply from 24.6 km/h at 05:00 to 13.0 km/h at 08:00 as the rush begins, stays on a flat congested plateau from 08:00 to 18:00 and recovers in the evening (13.6 to 16.9 km/h from 19:00 to 23:00). The 05:00 maximum is partly a trip-mix effect (mean distance 5.5 km against 3.4 km at 15:00: airport and highway trips). Weekends are faster between 05:00 and 19:00. Speeds are haversine-based, so the pattern, not the absolute level, is reliable.
 \fig{q3_5_speed_by_hour}{Average trip speed by pickup hour (mean, median, interquartile range), weekday versus weekend, and weekday $\times$ hour heat-map.}
 
 %====================================================================
@@ -144,7 +145,7 @@ We study Friday 23:00 -- Saturday 02:00 and Thursday 17:00 -- 20:00, pooled over
 \textbf{Result: 36 hotspot clusters for Friday 23:00--02:00 and 22 for Thursday 17:00--20:00} (Figure~\ref{fig:hot}; interactive folium maps are in \texttt{maps/}). They are compact (radius under 200\,m) and contain 18.5\,\% and 10.4\,\% of the window's pickups; the rest is noise, so demand is mostly diffuse. With $\varepsilon=100$\,m and 2/hour the counts would be 21 and 18, so the number is best read as ``a few dozen''.
 \fig[0.95\linewidth]{q4_2_hotspot_maps}{DBSCAN hotspots ($\varepsilon=50$\,m, $\geq1$ pickup/hour); grey = noise, numbers = ten busiest clusters (the airport clusters lie outside this map window).\label{fig:hot}}
 
-\textbf{Where are they?} (Nearest hand-entered landmark; approximate.) \emph{Friday night} is downtown nightlife: 52.6\,\% of the clustered pickups lie in the Village/East Village/Lower East Side/Meatpacking area (vs 3.9\,\% on Thursday), the busiest clusters being around Astor Place/NoHo, Nolita/Bowery on the Lower East Side, the Meatpacking District/West Chelsea (three clusters) and the West Village (2.7--5.2 pickups/hour each), plus Penn Station/Madison Square Garden (3.5/h) and a JFK cluster (2.4/h). \emph{Thursday evening} is transport hubs and the airports: Midtown West (Penn Station, Port Authority, Columbus Circle, Fifth Avenue/57th) holds 40.7\,\% of clustered pickups (15.9\,\% on Friday), the Upper East/West Side 21.1\,\% (0\,\% on Friday), and the busiest cluster is the LaGuardia terminal area (6.9/h) followed by two Penn Station clusters (5.3 and 3.9/h). Only 7 of the 36 Friday clusters have a Thursday cluster within 250\,m, mostly hubs and airports. A driver should therefore wait at the airports and Penn Station/Port Authority/Columbus Circle on Thursday early evening, and in the East Village--Lower East Side--Meatpacking--West Village area after 23:00 on Friday. Limitations: pooling averages out weather and events; a single $\varepsilon$ cannot suit both dense Midtown and sparse areas (80--90\,\% of pickups are noise); airports are hotspots in one direction only.
+\textbf{Where are they?} (Nearest hand-entered landmark; approximate.) \emph{Friday night} is downtown nightlife: 52.6\,\% of the clustered pickups lie in the Village/East Village/Lower East Side/Meatpacking area (vs 3.9\,\% on Thursday), the busiest clusters being around Astor Place/NoHo, Nolita/Bowery on the Lower East Side, the Meatpacking District/West Chelsea (three clusters) and the West Village (2.7--5.2 pickups/hour each), plus Penn Station/Madison Square Garden (3.5/h) and a JFK cluster (2.4/h). \emph{Thursday evening} is transport hubs and the airports: Midtown West (Penn Station, Port Authority, Columbus Circle, Fifth Avenue/57th) holds 40.7\,\% of clustered pickups (15.9\,\% on Friday), the Upper East/West Side 21.1\,\% (0\,\% on Friday), and the busiest cluster is the LaGuardia terminal area (6.9/h) followed by two Penn Station clusters (5.3 and 3.9/h). Only 7 of the 36 Friday clusters have a Thursday cluster within 250\,m. A driver should therefore wait at the airports and Penn Station/Port Authority/Columbus Circle on Thursday early evening, and in the East Village--Lower East Side--Meatpacking--West Village area after 23:00 on Friday. Limitations: pooling averages out weather and events; a single $\varepsilon$ cannot suit both dense Midtown and sparse areas (80--90\,\% of pickups are noise); airports are hotspots in one direction only.
 
 %====================================================================
 \section{Airports}
@@ -220,7 +221,7 @@ midday mixed-week long airport runs (LGA) & 1 & 2.3 & 9.76 & 28.5 & 20.6 & 16.0 
 all-day mixed-week very long airport runs (JFK) & 7 & 2.1 & 19.83 & 40.2 & 27.2 & 17.8 & 0.25 & 0.97\\
 midday mixed-week very long airport runs & 12 & 0.8 & 20.47 & 42.8 & 28.7 & 13.2 & 0.37 & 0.88\\\bottomrule\end{tabular}
 \end{table}
-\textbf{Interpretation.} The great majority are short (1.7--2.0 km, 9--11 min, 10--14 km/h) Midtown/Grand Central/Times Square hops spread over the day, one cluster per day of the week; their speeds reflect the congestion of Section~3.5 (Wednesday slowest at 10.7 km/h, Saturday fastest at 12.7). Thursday splits into the slowest cluster (midday, 10.1 km/h) and an evening cluster. Late-night Sunday (i.e.\ Saturday night) trips are short and quick (1.4 h mean hour); a fast, long late-night group (9.7 km at 29.3 km/h) corresponds to highway or cross-town night rides. The airport runs form distinct clusters: LaGuardia-area trips (about 9.8 km, 28.5 min) and JFK trips (about 20 km, 40--43 min, 27--29 km/h; two clusters that are probably the two directions of the same route, one centred at JFK and one in Midtown). The maps in the notebook (and appendix Figure~\ref{fig:maps}) show that the day-of-week clusters cover the same Manhattan footprint, so location does not separate them; only the airport clusters are spatially distinct.
+\textbf{Interpretation.} The great majority are short (1.7--2.0 km, 9--11 min, 10--14 km/h) Midtown/Grand Central/Times Square hops spread over the day, one cluster per day of the week; their speeds reflect the congestion of Section~3.5 (among the all-day clusters Wednesday is slowest at 10.7 km/h and Saturday fastest at 12.7). Thursday splits into the slowest cluster (midday, 10.1 km/h) and an evening cluster. Late-night Sunday (i.e.\ Saturday night) trips are short (1.8 km, 8 min; mean hour 1.4); a fast, long late-night group (9.7 km at 29.3 km/h) probably consists of highway or cross-town night rides. The airport runs form distinct clusters: LaGuardia-area trips (about 9.8 km, 28.5 min) and JFK trips (about 20 km, 40--43 min, 27--29 km/h; two clusters that are probably the two directions of the same route, one centred at JFK and one in Midtown). The pickup maps (Figure~\ref{fig:maps} for UMAP; Figures~\ref{fig:mapspca} and~\ref{fig:mapstsne} in the appendix for PCA and t-SNE) show that the day-of-week clusters cover the same Manhattan footprint, so location does not separate them; only the airport clusters with pickups at an airport are spatially distinct (the others have their pickups in Manhattan, because they are trips towards the airport).
 \begin{figure}[!htbp]\centering\includegraphics[width=0.95\linewidth]{q6_5_maps_umap}\caption{Pickup locations (red) of the eight largest and the airport-dominated UMAP clusters; grey = all sampled pickups.}\label{fig:maps}\end{figure}
 
 \subsection{Comparison of PCA, t-SNE and UMAP}
@@ -231,10 +232,11 @@ midday mixed-week very long airport runs & 12 & 0.8 & 20.47 & 42.8 & 28.7 & 13.2
 
 \begin{table}[!htbp]\centering\small
 \caption{Runtime and sensitivity (20\,000 trips, 4 cores).}\label{tab:rt}
-\begin{tabular}{p{1.1cm}p{2.6cm}p{4.2cm}p{4.2cm}}\toprule & Runtime & Hyper-parameters & Seed\\\midrule
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\begin{tabular}{L{1.1cm}L{3.2cm}L{4.0cm}L{4.6cm}}\toprule & Runtime & Hyper-parameters & Seed\\\midrule
 PCA & well under 1 s & only number of components & deterministic\\
-t-SNE & 57 / 69 / 110 s (perplexity 5/30/100); 93--116 s with random init & high: perplexity 5 gives no groups; 30 and 100 similar but lobes arranged differently & random init: 21--24 clusters, ARI 0.85 / 0.45 / 0.39 between seeds; with PCA init nearly seed-independent (ARI 1.0, trivially)\\
-UMAP & 6--44 s (first call includes numba compilation) & high: fragmentation and gap size change with $n_\text{neighbors}$, min\_dist & 29 / 20 / 23 clusters; ARI 0.86, 0.86, 0.90\\\bottomrule\end{tabular}
+t-SNE & 57 / 69 / 110 s (perplexity 5 / 30 / 100); 93--116 s with random initialisation & high: perplexity 5 gives no groups; 30 and 100 similar but lobes arranged differently & random initialisation: 21--24 clusters, ARI 0.85 / 0.45 / 0.39 between seeds; with PCA initialisation nearly seed-independent (ARI 1.0, trivially)\\
+UMAP & 6--44 s (the first call includes compilation) & high: fragmentation and gap size change with $n_\text{neighbors}$, min\_dist & 29 / 20 / 23 clusters; ARI 0.86, 0.86, 0.90\\\bottomrule\end{tabular}
 \end{table}
 \fig{q6_6_seed_sensitivity}{Seed sensitivity: best t-SNE (random initialisation) and best UMAP for seeds 42, 1 and 2 (colour: hour).\label{fig:seed}}
 
@@ -245,5 +247,11 @@ UMAP & 6--44 s (first call includes numba compilation) & high: fragmentation and
 
 \section*{Conclusions}
 The cleaned data (98.6\,\% of trips) show a clear weekly rhythm: Friday/Saturday are busiest, weekdays are commute-driven (peaks 18:00--21:00) and weekends nightlife-driven; only Memorial Day alters the daily volume. The spatial pattern is a residential-to-business flow in the morning, the reverse in the evening, and downtown nightlife at weekends; taxi hotspots are compact street corners that differ between Friday night and Thursday evening. Trips from the Empire State Building take about 46 min to JFK and 33 min to Newark, with a strong afternoon penalty. Dimensionality reduction shows that the data are high-dimensional (8 PCs for 90\,\%); the non-linear methods expose the day-of-week and airport structure, but their clusters, distances and sizes must be validated rather than read at face value.
+
+\appendix
+\section{Pickup locations of the PCA and t-SNE clusters}
+The pickup locations of the largest clusters (and of the airport-dominated clusters) of the PCA and t-SNE clusterings of Section~6.5 are shown below in the same way as the UMAP clusters in Figure~\ref{fig:maps} (red = the cluster's pickups, grey = all sampled pickups). The cluster profiles of all clusters are printed in the notebook. As for UMAP, the large clusters (one giant cluster for PCA; day- and time-of-day groups for t-SNE) cover the same Manhattan footprint. The airport clusters have their pickups either at an airport (LaGuardia or JFK) or in Manhattan (trips towards the airport).
+\begin{figure}[!htbp]\centering\includegraphics[width=0.95\linewidth]{q6_5_maps_pca}\caption{PCA (first 8 components) clusters: pickup locations of the largest and the airport-dominated clusters.}\label{fig:mapspca}\end{figure}
+\begin{figure}[!htbp]\centering\includegraphics[width=0.95\linewidth]{q6_5_maps_tsne}\caption{t-SNE (perplexity 100) clusters: pickup locations of the eight largest and the airport-dominated clusters.}\label{fig:mapstsne}\end{figure}
 
 \end{document}
